@@ -26,3 +26,17 @@ print(user_data)
 user_id = user_data["id"]
 user_name = user_data["name"]
 ```
+## Example 1 : Add to guild
+```
+import discord-oauth2 as oauth2
+
+access_token = "Here your token"
+
+user_data = oauth2.get_user_info(access_token)
+
+user_id = user_data["id"]
+
+res = oauth2.add_to_guild(access_token, str(uid), "guild_id")
+
+print(res)
+``
