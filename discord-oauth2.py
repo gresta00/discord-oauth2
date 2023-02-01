@@ -13,7 +13,7 @@ def get_token(code : str , client_id : str , client_secret : str , redirect_uri 
 
     return response.json()
 
-def add_to_guild(bot_token : str, access_token : str, userID : int, guildID : int , roles) -> dict:
+def add_to_guild(bot_token : str, access_token : str, userID : int, guildID : int , *roles) -> dict:
   url = f"https://discord.com/api/v10/guilds/{guildID}/members/{userID}"
   data = {
     "access_token": access_token,
