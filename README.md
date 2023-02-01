@@ -1,5 +1,6 @@
 # discord-oauth2
 Python library for using Discord OAuth2
+This repository is incomplete and may contain many bugs.
 # How to use
 ## Arrange the files as below
 ```
