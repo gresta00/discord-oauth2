@@ -2,11 +2,9 @@
 Python library for using Discord OAuth2
 This repository is incomplete and may contain many bugs.
 # How to use
-## Arrange the files as below
+## How to install
 ```
-./
-├─ main.py
-└─ discord-oauth2.py
+$ pip install git+https://github.com/gresta00/discord-oauth2
 ```
 ## Get access token from code
 ```
