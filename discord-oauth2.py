@@ -15,10 +15,22 @@ def get_token(code : str , client_id : str , client_secret : str , redirect_uri 
 
 def add_to_guild(bot_token : str, access_token : str, userID : int, guildID : int , *roles) -> dict:
   url = f"https://discord.com/api/v10/guilds/{guildID}/members/{userID}"
-  data = {
-    "access_token": access_token,
-    "roles": map(str , roles.split(',')),
-  }
+
+  if roles == None:
+    data = {
+        "access_token": access_token,
+    }
+  else:
+    if isinstance(roles , list):
+        data = {
+            "access_token": access_token,
+            "roles": map(str , roles),
+        }
+    else:
+        data = {
+            "access_token": access_token,
+            "roles": str(roles),
+        }  
 
   headers = {"Authorization": f"Bot {bot_token}", 'Content-Type': 'application/json'}
   response = requests.put(url=url, headers=headers, json=data)
