@@ -37,3 +37,17 @@ res = oauth2.add_to_guild(access_token, str(uid), "guild_id")
 
 print(res)
 ```
+## Example 2 : Get user guilds
+```
+import discord-oauth2 as oauth2
+
+access_token = "Here your token"
+
+user_data = oauth2.get_user_info(access_token)
+
+user_id = user_data["id"]
+
+user_guilds = oauth2.get_user_guilds(access_token , user_id)
+
+print(user_guilds)
+```
